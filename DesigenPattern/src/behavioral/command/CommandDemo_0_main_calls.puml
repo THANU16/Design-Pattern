@@ -1,0 +1,209 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "command.CommandDemo#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": true,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": true,
+    "showPackageLevels": 5,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "command.CommandDemo",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_950394699 { 
+   	label=command
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1072805372 { 
+   	label=MenuOptions
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   MenuOptions950394699XXXclickOpen0[
+	label="+ clickOpen()"
+	style=filled
+	fillcolor=white
+	tooltip="MenuOptions
+
+null"
+	fontcolor=darkgreen
+];
+
+MenuOptions950394699XXXclickSave0[
+	label="+ clickSave()"
+	style=filled
+	fillcolor=white
+	tooltip="MenuOptions
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1213016872 { 
+   	label=ActonOpen
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ActonOpen950394699XXXexecute0[
+	label="+ execute()"
+	style=filled
+	fillcolor=white
+	tooltip="ActonOpen
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_395070590 { 
+   	label=Document
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Document950394699XXXopen0[
+	label="+ open()"
+	style=filled
+	fillcolor=white
+	tooltip="Document
+
+null"
+	fontcolor=darkgreen
+];
+
+Document950394699XXXsave0[
+	label="+ save()"
+	style=filled
+	fillcolor=white
+	tooltip="Document
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_630761077 { 
+   	label=CommandDemo
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandDemo950394699XXXmain1859653459[
+	label="+ main(String[])"
+	style=filled
+	fillcolor=white
+	tooltip="CommandDemo
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_77518710 { 
+   	label=ActionSave
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ActionSave950394699XXXexecute0[
+	label="+ execute()"
+	style=filled
+	fillcolor=white
+	tooltip="ActionSave
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
+'edges    
+ActionSave950394699XXXexecute0 -> Document950394699XXXsave0;
+ActonOpen950394699XXXexecute0 -> Document950394699XXXopen0;
+CommandDemo950394699XXXmain1859653459 -> MenuOptions950394699XXXclickOpen0;
+CommandDemo950394699XXXmain1859653459 -> MenuOptions950394699XXXclickSave0;
+MenuOptions950394699XXXclickOpen0 -> ActionSave950394699XXXexecute0;
+MenuOptions950394699XXXclickOpen0 -> ActonOpen950394699XXXexecute0;
+    
+}
+@enduml
